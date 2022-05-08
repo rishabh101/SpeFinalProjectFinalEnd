@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import FirstComponent from './firstComponent';
+
 import logo from './logo.svg';
 import './App.css';
-import Counter from './Counter';
-import Login from './Todo/Login';
+import Login from './FinalProject/Login';
 import './bootstrap.css'
  
 class App extends Component {

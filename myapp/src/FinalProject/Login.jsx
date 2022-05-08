@@ -6,88 +6,96 @@ import Form from './Registration.jsx';
 import PersonalService from './PersonalServices.jsx';
 import {Card,CardImg,CardText,CardBody,CardTitle,CardSubtitle,Button,CardColumns,CardHeader,CardFooter} from 'reactstrap';
 import HomeandService from './HomeService.jsx';
-import SignupForm from './Signup.jsx';
+import Signup from './Signup.jsx';
 import axios from 'axios';
 import { Container } from 'react-dom';
 import ConnectingService from './connecting.jsx';
-
+import ConnectingService2 from "./connecting2.jsx";
+import OurCard from './OurCard.jsx';
+import { useState } from 'react';
+import OurCard1 from './OurCard1.jsx';
+import NoteState from './NodeState.jsx';
+import NextCard from './NextCard.jsx';
+import NoteState2 from './NodeState2.jsx';
+import NextCard2 from './NextCard2.jsx';
 class Login extends Component
 {
     
     render()
     {
         const LoginComponentWithNavigation = withNavigation(LoginComponent);
+       
         return(
             
             <div className="TodoApp">
+              <NoteState>
+            
                 <Router>
                 <HeaderComponent/>
                     <Routes>
                     
-                    <Route path="/signup" element={<SignupForm/>}/>
+                    <Route path="/signup" element={<Signup/>}/>
                     <Route path="/login" element={<LoginComponentWithNavigation />} />
                         <Route path="/" element={ <LoginComponentWithNavigation/>}/>
                         <Route path="*" element={<ErrorComponent />} />
                     <Route path="/welcome" element={<WelcomeComponent/>}></Route>
+                    <Route path="/welcome1" element={<Welcome1Component/>}></Route>
                     
                     <Route path="/logout" element={<LogoutComponent/>}></Route>
                     <Route path="/personal" element={<PersonalService/>}></Route>
                     <Route path="/homeservice" element={<HomeandService/>}></Route>
+                    <Route path="/welcome2" element={<OurCard1/>}></Route>
+                    <Route path="/next" element={<NextCard/>}></Route>
+                    <Route path="/next2" element={<NextCard2/>}></Route>
                     </Routes>
                    
                    
                     </Router>
+                    
+                    </NoteState>
+
                 
             </div>
         )
     }
 }
-class ListTodosCompnent extends Component{
-    constructor(props)
-    {
-        super(props)
-        this.state={
-            todos:
-            [{id:1,description:'Learn React',done:false,Date:new Date()},
-            {id:2,description:'Become an expert at  React',done:false,Date:new Date()},
-            {id:3,description:'Go to anime',done:false,Date:new Date()}]
-        }
+ 
+
+const Welcome1Component =() =>{
+
+ 
+  const [categories,setCategories] = useState([]);
+ 
+    const [images,setImages]=useState(
+      [{src :"https://image.shutterstock.com/image-vector/online-assistant-virtual-technical-support-600w-1431106397.jpg"},{src1:"https://image.shutterstock.com/image-vector/online-assistant-virtual-technical-support-600w-1431106397.jpg"}]
+    )
+
+    return(
+     
+    <div>
+      <h1>Hello User ,welcome to our website ,happy to help you</h1>
+      <Button onClick={loginClicked1}>
+        View all Categories of the services we provide
+      </Button>
+      <div>
+      { 
+      categories.length>0 ?categories.map((item) => <OurCard details={item} />): "No Categories"
     }
-
-    render()
+    </div>
+    </div>
+    )
+     function loginClicked1()
     {
-        return (
-            <div class ="container">
-                <h1>List todos</h1>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>Description</th>
-                            <th>Done</th>
-                            <th>Date</th>
-                        </tr>
-
-                    </thead>
-                    <tbody>
-                        {
-                            this.state.todos.map
-                            (
-                                todo=>
-                        <tr>
-                            <td>{todo.id}</td>
-                            <td>{todo.description}</td>
-                            <td>{todo.done.toString()}</td>
-                            <td>{todo.Date.toString()}</td>
-                        </tr>
-        )
-                        }
-
-                    </tbody>
-                </table>
-
-            </div>
-        )
+    ConnectingService2.successful().then(response=> {
+      if(response.data!=null)
+      {
+        
+        console.log(response);
+      setCategories(response.data);
+          
+    
+      }
+    });
     }
 }
 
@@ -105,6 +113,24 @@ render()
 
 class WelcomeComponent extends Component
 {
+  constructor(props)
+  {
+    super(props);
+    this.state={
+      Servicename:""
+    }
+  }
+
+  loginClicked1()
+  {
+  ConnectingService2.successful().then(response=> {
+    if(response.data!=null)
+    {
+      alert("successful");
+    }
+  });
+  }
+  
     render()
         {
             return( 
@@ -118,7 +144,7 @@ class WelcomeComponent extends Component
     />
     <CardBody>
       <CardTitle tag="h5">
-       <Link to="/personal"> Personal Services</Link>
+       <Button onClick={this.loginClicked1}>PersonalServices</Button> 
       </CardTitle>
       <CardSubtitle
         className="mb-2 text-muted"
@@ -303,7 +329,7 @@ class LoginComponent extends Component
       ConnectingService.executeHelloWorldService(this.state.email,this.state.password).then(response => console.log(response));
           console.log('Successful')
           AuthenticationService.registerSuccessfulLogin(this.state.email,this.state.password);
-          this.props.navigate(`/welcome`)
+          this.props.navigate(`/welcome1`)
           this.setState({showSuccessfulMessage :true})
           this.setState({hasLoginFailed:false})
      }
