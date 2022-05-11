@@ -4,9 +4,7 @@ import OurCard1 from './OurCard1';
 import NoteState from './NodeState';
 
 
-const NextCard=()=>
-{
-    const context=useContext(noteContext);
+
 
 const NextCard=(props)=>
 {
