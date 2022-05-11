@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 import React, {Component} from 'react'
 import { BrowserRouter as Router,Route,Routes,Link } from 'react-router-dom';
 import withNavigation from './WithNavigation.jsx';
 import AuthenticationService from './AuthenticationService.jsx';
 import Form from './Registration.jsx';
+=======
+import React, {Component, useEffect} from 'react'
+import { BrowserRouter as Router,Route,Routes,Link } from 'react-router-dom';
+import withNavigation from './WithNavigation.jsx';
+import AuthenticationService from './AuthenticationService.jsx';
+
+>>>>>>> Commit done
 import PersonalService from './PersonalServices.jsx';
 import {Card,CardImg,CardText,CardBody,CardTitle,CardSubtitle,Button,CardColumns,CardHeader,CardFooter} from 'reactstrap';
 import HomeandService from './HomeService.jsx';
@@ -18,12 +26,30 @@ import NoteState from './NodeState.jsx';
 import NextCard from './NextCard.jsx';
 import NoteState2 from './NodeState2.jsx';
 import NextCard2 from './NextCard2.jsx';
+<<<<<<< HEAD
+=======
+import withParams from './withParams.jsx';
+import { useNavigate } from 'react-router';
+import noteContext from './noteContext.jsx';
+import { useContext } from 'react';
+import Subscribe from './Subscribe.jsx';
+>>>>>>> Commit done
 class Login extends Component
 {
     
     render()
     {
+<<<<<<< HEAD
         const LoginComponentWithNavigation = withNavigation(LoginComponent);
+=======
+       /* const LoginComponentWithNavigation = withNavigation(LoginComponent);*/
+        const WelcomeComponentWithParams = withParams(Welcome1Component);
+        
+       const NextCardwithParams=withParams(NextCard);
+       const NextCard2withParams=withParams(NextCard2);
+       const SubscribewithParams=withParams(Subscribe);
+      
+>>>>>>> Commit done
        
         return(
             
@@ -35,18 +61,34 @@ class Login extends Component
                     <Routes>
                     
                     <Route path="/signup" element={<Signup/>}/>
+<<<<<<< HEAD
                     <Route path="/login" element={<LoginComponentWithNavigation />} />
                         <Route path="/" element={ <LoginComponentWithNavigation/>}/>
                         <Route path="*" element={<ErrorComponent />} />
                     <Route path="/welcome" element={<WelcomeComponent/>}></Route>
                     <Route path="/welcome1" element={<Welcome1Component/>}></Route>
                     
+=======
+                    <Route path="/login" element={<LoginComponent/>} />
+                        <Route path="/" element={ <LoginComponent/>}/>
+                        <Route path="*" element={<ErrorComponent />} />
+                    <Route path="/welcome" element={<WelcomeComponent/>}></Route>
+                    
+                    <Route path="/welcome1/:email" element={<WelcomeComponentWithParams />} />
+>>>>>>> Commit done
                     <Route path="/logout" element={<LogoutComponent/>}></Route>
                     <Route path="/personal" element={<PersonalService/>}></Route>
                     <Route path="/homeservice" element={<HomeandService/>}></Route>
                     <Route path="/welcome2" element={<OurCard1/>}></Route>
+<<<<<<< HEAD
                     <Route path="/next" element={<NextCard/>}></Route>
                     <Route path="/next2" element={<NextCard2/>}></Route>
+=======
+                    <Route path="/next/:email" element={<NextCardwithParams/>}></Route>
+                    <Route path="/next2/:email" element={<NextCard2withParams/>}></Route>
+                    <Route path="/subscribe/:email" element={<SubscribewithParams/>}></Route>
+                    <Route path="/orders" element={<Orders1/>}></Route>
+>>>>>>> Commit done
                     </Routes>
                    
                    
@@ -61,7 +103,11 @@ class Login extends Component
 }
  
 
+<<<<<<< HEAD
 const Welcome1Component =() =>{
+=======
+const Welcome1Component =(props) =>{
+>>>>>>> Commit done
 
  
   const [categories,setCategories] = useState([]);
@@ -73,7 +119,11 @@ const Welcome1Component =() =>{
     return(
      
     <div>
+<<<<<<< HEAD
       <h1>Hello User ,welcome to our website ,happy to help you</h1>
+=======
+      <div>Welcome {props.params.email}</div>
+>>>>>>> Commit done
       <Button onClick={loginClicked1}>
         View all Categories of the services we provide
       </Button>
@@ -111,6 +161,40 @@ render()
 }
 }
 
+<<<<<<< HEAD
+=======
+const Orders=(props)=>
+{
+  
+  
+    
+    return(
+      <div>
+        
+        
+
+      </div>
+    )
+}
+const Orders1=(props)=>
+{
+  const a =useContext(noteContext);
+  
+  const {orders,setOrders}=a;
+ 
+  return(
+    
+    <div>
+      <h1>The past orders are:-\</h1>
+      Category is {orders}
+      
+
+    </div>
+  )
+}
+
+
+>>>>>>> Commit done
 class WelcomeComponent extends Component
 {
   constructor(props)
@@ -215,16 +299,50 @@ class WelcomeComponent extends Component
 function ErrorComponent() {
     return <div>An Error Occurred. I don't know what to do! Contact support at abcd-efgh-ijkl</div>
 }
+<<<<<<< HEAD
 class HeaderComponent extends Component{
     render()
     {
+=======
+const  HeaderComponent=()=>{
+   
+
+  const context =useContext(noteContext);
+  const a =useContext(noteContext);
+  const {userId,setUserid}=context;
+ 
+  
+  
+  function clicked()
+  {
+  ConnectingService2.getOrders(userId).then(response=>
+    {
+      if(response.data!=null)
+      {
+        console.log(response.data);
+        {
+
+            a.update5(response.data[0]);
+        }
+      }
+    })
+  }
+
+>>>>>>> Commit done
         return (
         
         <header>
             <nav className ="navbar navbar-expand-md navbar-dark bg-dark">
           <div><a href="http://www.in28minutes.com" className="navbar-brand">Welcome to RB Website</a></div>
+<<<<<<< HEAD
           <ul class ="navbar-nav">
               <li ><Link className="nav-link" to="/welcome">Home</Link></li>
+=======
+          <ul className ="navbar-nav">
+              
+              <li ><Link className="nav-link" to="/orders"><Button onClick={clicked}>
+              Orders</Button></Link></li>
+>>>>>>> Commit done
               
           </ul>
           <ul className="navbar-nav navbar-collapse justify-content-end">
@@ -234,7 +352,11 @@ class HeaderComponent extends Component{
           </nav>
             </header>
         )
+<<<<<<< HEAD
     }
+=======
+    
+>>>>>>> Commit done
 }
 class FooterComponent extends Component
 {
@@ -295,6 +417,7 @@ class LogoutComponent extends Component{
         </div>
     }
 }
+<<<<<<< HEAD
 class LoginComponent extends Component
 {
     constructor(props)
@@ -365,6 +488,78 @@ class LoginComponent extends Component
             </div>
         )
     }
+=======
+const LoginComponent=()=>
+{
+
+  const [Credentials,setCredentials]=useState({email:"",password:""})
+  const a=useContext(noteContext);
+      let  hasLoginFailed=false;
+      let showSuccessfulMessage=false;
+            
+      let navigate=useNavigate();
+      
+      
+    
+   const handleChange=(event)=>
+    {
+        
+          
+             setCredentials({...Credentials,[event.target.name]:event.target.value});
+        
+          
+    }
+   function loginClicked()
+    {
+     
+     if(Credentials.email!='' && Credentials.password!='')
+     {
+      ConnectingService.executeHelloWorldService(Credentials.email,Credentials.password).then(response =>{
+         if(response.data!=null)
+         {
+          a.update4(response.data);
+        console.log(response.data);
+         }
+        });
+          console.log('Successful')
+          AuthenticationService.registerSuccessfulLogin(Credentials.email,Credentials.password);
+          a.update3(Credentials);
+          navigate(`/welcome1/${Credentials.email}`)
+          showSuccessfulMessage =true;
+          hasLoginFailed=false;
+     }
+     else{
+         console.log('failed');
+        showSuccessfulMessage=false
+        hasLoginFailed=true
+     }
+
+    }
+   function retreiveLogin()
+    {
+     ConnectingService.executeHelloWorldService().then(response => this.loginClicked(response));
+    }
+   
+        return(
+            <div>
+                
+                <InvalidCredentials hasloginfailed={hasLoginFailed}/>
+                <br/>
+                <div>
+            Email:< input type="email" name="email" value={Credentials.email} onChange={handleChange}/>
+            </div>
+            <br/>
+            <div>
+            Password:<input type="password" name="password"  value={Credentials.password} onChange={handleChange}/>
+            </div>
+            <br/>
+            <div>
+             <button onClick ={loginClicked}>Login</button>
+             </div>
+            </div>
+        )
+    
+>>>>>>> Commit done
 }
 function InvalidCredentials(props)
 {

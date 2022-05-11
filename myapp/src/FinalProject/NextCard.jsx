@@ -3,9 +3,17 @@ import React, { useContext } from 'react';
 import OurCard1 from './OurCard1';
 import NoteState from './NodeState';
 
+<<<<<<< HEAD
 const NextCard=()=>
 {
     const context=useContext(noteContext);
+=======
+const NextCard=(props)=>
+{
+    const context=useContext(noteContext);
+    
+    
+>>>>>>> Commit done
     const {Services,setServices} =context;
     return(
         <div>
