@@ -14,9 +14,7 @@ class ConnectingService2 extends Component{
      {
         return(axios.get(`http://localhost:8080/service/getsubservice/${service}`));
      }
-<<<<<<< HEAD
 
-=======
       subscribe(userid,subserviceid)
       {
         return(axios.get(`http://localhost:8080/service/subscribe/${userid}/${subserviceid}`));   
@@ -26,6 +24,6 @@ class ConnectingService2 extends Component{
       {
           return(axios.get(`http://localhost:8080/service/orders/${userid}`));
       }
->>>>>>> Commit done
+
 }
 export default new  ConnectingService2;
