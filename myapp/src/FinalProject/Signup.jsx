@@ -21,12 +21,11 @@ export default function Signup()
         body:JSON.stringify(user),
      }).then(()=>{
        console.log("New Student Added")
-<<<<<<< HEAD
-=======
+
        
       
       
->>>>>>> Commit done
+
       });
      
   }
