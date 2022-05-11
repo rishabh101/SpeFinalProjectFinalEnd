@@ -5,19 +5,7 @@ import noteContext from './noteContext';
 import { useNavigate } from 'react-router';
 import ConnectingService2 from './connecting2.jsx';
 import { useContext } from 'react';
-<<<<<<< HEAD
-const OurCard2=(props)=>
-{
-    let ser1=props.details;
-    
-    const a=useContext(noteContext);
 
-    let navigate=useNavigate();
-    if(ser1=='Haircut')
-    {
-    return(
-<div>  <Card
-=======
 import Subscribe from "./Subscribe";
 const OurCard2=(props)=>
 {
@@ -174,21 +162,7 @@ if((ser2.subservice=='Television'))
   </Card>
  </div>
  )
-<<<<<<< HEAD
-}
-else{
-    return(
-        <div></div>
-    )
-}
 
- loginClicked2(subservice)
- {
-
- }
-}
-export default OurCard2;
-=======
  
 
   
@@ -389,4 +363,4 @@ function  loginClicked2(Id,subservice)
 
 
 export  default OurCard2;
->>>>>>> Commit done
+
