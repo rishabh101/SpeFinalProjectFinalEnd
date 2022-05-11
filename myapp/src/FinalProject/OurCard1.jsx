@@ -8,10 +8,9 @@ const OurCard1=(props)=>
 {
     let ser1=props.details;
     const a=useContext(noteContext);
-<<<<<<< HEAD
-=======
+
+
     const {Credentials,setCredentials}=a;
->>>>>>> Commit done
 
     let navigate=useNavigate();
     if(ser1=='SalonForM')
@@ -50,9 +49,8 @@ return(
          </div>           
         )
     }
-<<<<<<< HEAD
-    if(ser1=='MassageforM')
-=======
+
+  
     if(ser1=='MassageforMen')
 >>>>>>> Commit done
     {
@@ -72,9 +70,7 @@ return(
             </div>           
            )
     }
-<<<<<<< HEAD
-    if(ser1=='Acservice')
-=======
+
     if(ser1=='ApplianceRepair')
 >>>>>>> Commit done
     {
@@ -94,17 +90,7 @@ return(
          </div>           
         )
     }
-<<<<<<< HEAD
-    else{
-        return(
-<div>
 
-</div>
-        )
-        
-    }
-    
-=======
 
         
           
@@ -170,7 +156,7 @@ return(
                     <div></div>
                 )
             }
->>>>>>> Commit done
+
 
 
     function loginClicked2(service)
@@ -184,11 +170,9 @@ return(
               {
                a.update2(response.data);
               }
-<<<<<<< HEAD
-              navigate('/next2');
-=======
+
               navigate(`/next2/${a.credentials.email}`);
->>>>>>> Commit done
+
             
         
              
