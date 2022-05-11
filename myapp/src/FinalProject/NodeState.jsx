@@ -7,9 +7,7 @@ const NoteState=(props)=>
     const s2=[{subservice:'',
 cost:0}]
 
-    const [Services,setServices]=useState(s1);
-    const [SubService,setSubservices]=useState(s2);
-
+    
 const s3=[{email:'',password:''}]
 const s4=[]
     const s5=[]
