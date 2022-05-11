@@ -15,11 +15,10 @@ const  OurCard=(props) =>
 
    let navigate=useNavigate();
    
-<<<<<<< HEAD
-=======
+
    const {Credentials,setCredentials}=a;
   
->>>>>>> Commit done
+
     
 
     if(ser=='Personal')
@@ -88,12 +87,12 @@ const  OurCard=(props) =>
               {
                a.update(response.data);
               }
-<<<<<<< HEAD
+
               navigate('/next');
-=======
+
               
               navigate(`/next/${a.credentials.email}`);
->>>>>>> Commit done
+
             
         
              
@@ -112,11 +111,11 @@ const  OurCard=(props) =>
                   console.log(response);
                   a.update(response.data);
             
-<<<<<<< HEAD
+
                 navigate('/next');
-=======
+
                   navigate(`/next/${a.credentials.email}`);
->>>>>>> Commit done
+
               <div>
                   
               </div>
