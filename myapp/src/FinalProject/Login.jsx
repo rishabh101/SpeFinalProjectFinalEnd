@@ -296,11 +296,8 @@ class WelcomeComponent extends Component
 function ErrorComponent() {
     return <div>An Error Occurred. I don't know what to do! Contact support at abcd-efgh-ijkl</div>
 }
-<<<<<<< HEAD
-class HeaderComponent extends Component{
-    render()
-    {
-=======
+
+
 const  HeaderComponent=()=>{
    
 
@@ -414,7 +411,7 @@ class LogoutComponent extends Component{
         </div>
     }
 }
-<<<<<<< HEAD
+
 class LoginComponent extends Component
 {
     constructor(props)
