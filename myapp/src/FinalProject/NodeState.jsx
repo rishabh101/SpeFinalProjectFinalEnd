@@ -18,7 +18,7 @@ const s4=[]
     const[credentials,setCredentials]=useState(s3);
     const [userId,setUserid]=useState(s4);
     const [orders,setOrders]=useState(s5);
->>>>>>> Commit done
+
     const update=(data)=>
     {
         setServices(data);
