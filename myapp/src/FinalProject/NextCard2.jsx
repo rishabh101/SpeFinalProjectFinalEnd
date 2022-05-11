@@ -4,14 +4,7 @@ import React, { useContext } from 'react';
 import OurCard2 from './OurCard1';
 import NoteState from './NodeState';
 
-const NextCard2=()=>
-{
-    const context=useContext(noteContext);
-    const {SubService,setSubservices} =context;
-    return(
-        <div>
-        {
-SubService.length>0?SubService.map((item) => <OurCard2 details={item.subservice} />):'No Services'
+
 
 import OurCard2 from './OurCard2';
 import NoteState from './NodeState';
