@@ -88,7 +88,7 @@ const  OurCard=(props) =>
                a.update(response.data);
               }
 
-              navigate('/next');
+              
 
               
               navigate(`/next/${a.credentials.email}`);
@@ -112,7 +112,7 @@ const  OurCard=(props) =>
                   a.update(response.data);
             
 
-                navigate('/next');
+                
 
                   navigate(`/next/${a.credentials.email}`);
 
