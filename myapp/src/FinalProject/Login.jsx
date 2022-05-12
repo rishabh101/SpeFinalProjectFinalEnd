@@ -62,10 +62,10 @@ class Login extends Component
                     <Route path="/login" element={<LoginComponentWithNavigation />} />
                         <Route path="/" element={ <LoginComponentWithNavigation/>}/>
                         <Route path="*" element={<ErrorComponent />} />
-                    <Route path="/welcome" element={<WelcomeComponent/>}></Route>
-                    <Route path="/welcome1" element={<Welcome1Component/>}></Route>
+                    
+                    
                   
-                    <Route path="/login" element={<LoginComponent/>} />
+                    
                         <Route path="/" element={ <LoginComponent/>}/>
                         <Route path="*" element={<ErrorComponent />} />
                     <Route path="/welcome" element={<WelcomeComponent/>}></Route>
@@ -100,7 +100,7 @@ class Login extends Component
  
 
 
-const Welcome1Component =() =>{
+
 
 const Welcome1Component =(props) =>{
 
@@ -329,7 +329,7 @@ const  HeaderComponent=()=>{
 
           <ul class ="navbar-nav">
               <li ><Link className="nav-link" to="/welcome">Home</Link></li>
-
+          </ul>
           <ul className ="navbar-nav">
               
               <li ><Link className="nav-link" to="/orders"><Button onClick={clicked}>
@@ -410,7 +410,7 @@ class LogoutComponent extends Component{
     }
 }
 
-class LoginComponent extends Component
+class LoginComponent1 extends Component
 {
     constructor(props)
     {
@@ -480,7 +480,7 @@ class LoginComponent extends Component
             </div>
         )
     }
-
+}
 const LoginComponent=()=>
 {
 
