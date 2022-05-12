@@ -131,7 +131,6 @@ if((ser2.subservice=='Television'))
   return(
     <div>
 <Card
->>>>>>> Commit done
     body
     inverse
     style={{
@@ -140,14 +139,7 @@ if((ser2.subservice=='Television'))
     }}
   >
     <CardTitle tag="h5">
-<<<<<<< HEAD
-      {props.details}
-    </CardTitle>
-    <CardText>
-      View all {props.details} services
-    </CardText>
-    <Button onClick={()=>loginClicked2(props.details)} >
-=======
+
       {props.details.subservice}
     </CardTitle>
     <CardText>
@@ -156,7 +148,7 @@ if((ser2.subservice=='Television'))
 
     </CardText>
     <Button onClick={()=>loginClicked2(props.details.id,props.details.subservice)} >
->>>>>>> Commit done
+
       Add
     </Button>
   </Card>
