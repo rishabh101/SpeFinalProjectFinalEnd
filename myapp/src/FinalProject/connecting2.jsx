@@ -3,26 +3,26 @@ import axios from 'axios';
 class ConnectingService2 extends Component{
     successful()
     {
-        return(axios.get(`http://localhost:8080/service/getCategories`));
+        return(axios.get(`http://localhost:8000/service/getCategories`));
     }
      servicesSuccessful(category)
      {
-         return(axios.get(`http://localhost:8080/service/getService/${category}`));
+         return(axios.get(`http://localhost:8000/service/getService/${category}`));
      }
     
      subservicesSuccessful(service)
      {
-        return(axios.get(`http://localhost:8080/service/getsubservice/${service}`));
+        return(axios.get(`http://localhost:8000/service/getsubservice/${service}`));
      }
 
       subscribe(userid,subserviceid)
       {
-        return(axios.get(`http://localhost:8080/service/subscribe/${userid}/${subserviceid}`));   
+        return(axios.get(`http://localhost:8000/service/subscribe/${userid}/${subserviceid}`));   
       }
 
       getOrders(userid)
       {
-          return(axios.get(`http://localhost:8080/service/orders/${userid}`));
+          return(axios.get(`http://localhost:8000/service/orders/${userid}`));
       }
 
 }
