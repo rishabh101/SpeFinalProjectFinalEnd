@@ -1,8 +1,7 @@
 import noteContext from './noteContext';
 import React, { useContext } from 'react';
 
-import OurCard2 from './OurCard1';
-import NoteState from './NodeState';
+
 
 
 
