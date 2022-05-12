@@ -349,7 +349,7 @@ const  HeaderComponent=()=>{
 
     
 
-}
+
 class FooterComponent extends Component
 {
     render()
