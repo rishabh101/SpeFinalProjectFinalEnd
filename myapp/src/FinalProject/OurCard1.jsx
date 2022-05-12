@@ -52,7 +52,7 @@ return(
 
   
     if(ser1=='MassageforMen')
->>>>>>> Commit done
+
     {
 return(    
                <div>
@@ -72,7 +72,7 @@ return(
     }
 
     if(ser1=='ApplianceRepair')
->>>>>>> Commit done
+
     {
         return(    
             <div>
