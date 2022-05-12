@@ -25,9 +25,7 @@ const s4=[]
     {
         setSubservices(data);
     }
-    return(
-        <noteContext.Provider value={{Services,update,SubService,update2}}>
-
+   
     const update3=(data)=>
     {
        setCredentials({email:data.email,password:data.password});
